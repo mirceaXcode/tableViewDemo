@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -19,10 +19,24 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+#pragma mark - UITableViewDataSource
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //return _ourStrings.count;
+    return 3;
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    MyCell * cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
+    return [tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
+//    cell.ourCellLabel.text = _ourStrings[indexPath.row];
+    // Sets the label text with the number of the rows after the text "Row Number "
+    // cell.ourCellLabel.text = [NSString stringWithFormat:@"Row number %d", (int) indexPath.row];
+    //return cell;
 }
 
 
