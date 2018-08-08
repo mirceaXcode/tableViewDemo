@@ -10,6 +10,8 @@
 #import "MyCell.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *ourStrings;
 
 @end
 
@@ -17,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    _ourStrings = [NSMutableArray arrayWithArray:@[@"The First Row!", @"More Data"]];
 }
 
 #pragma mark - UITableViewDataSource
@@ -27,16 +30,16 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //return _ourStrings.count;
-    return 3;
+    return _ourStrings.count;
+    //return 3;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
- MyCell * cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
+    MyCell * cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
     //return [tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
-//    cell.ourCellLabel.text = _ourStrings[indexPath.row];
+    cell.ourCellLabel.text = _ourStrings[indexPath.row];
     // Sets the label text with the number of the rows after the text "Row Number "
-    cell.ourCellLabel.text = [NSString stringWithFormat:@"Row number %d", (int) indexPath.row];
+    // cell.ourCellLabel.text = [NSString stringWithFormat:@"Row number %d", (int) indexPath.row];
     return cell;
 }
 
