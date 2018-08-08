@@ -30,6 +30,9 @@
                                 <rect key="frame" x="335" y="20" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B41-FA-ZMN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-Kw-vVQ">
                                 <rect key="frame" x="172" y="58" width="30" height="30"/>
@@ -78,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="IzW-35-Lte" id="lCA-13-hAy"/>
+                        <outlet property="textField" destination="V0V-t7-7Lg" id="QKQ-8s-ro3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

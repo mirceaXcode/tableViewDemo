@@ -12,6 +12,7 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *ourStrings;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -22,6 +23,18 @@
 
     _ourStrings = [NSMutableArray arrayWithArray:@[@"The First Row!", @"More Data"]];
 }
+
+- (IBAction)addTapped:(id)sender {
+    //[_tableView beginUpdates];
+    
+    [_ourStrings addObject:_textField.text];
+    [_tableView reloadData];
+    
+    //[_tableView endUpdates];
+    
+    
+}
+
 
 #pragma mark - UITableViewDataSource
 
