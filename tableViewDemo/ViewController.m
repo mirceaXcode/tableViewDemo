@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyCell.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,12 +32,12 @@
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    MyCell * cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
-    return [tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
+ MyCell * cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
+    //return [tableView dequeueReusableCellWithIdentifier:@"OurCell" forIndexPath:indexPath];
 //    cell.ourCellLabel.text = _ourStrings[indexPath.row];
     // Sets the label text with the number of the rows after the text "Row Number "
-    // cell.ourCellLabel.text = [NSString stringWithFormat:@"Row number %d", (int) indexPath.row];
-    //return cell;
+    cell.ourCellLabel.text = [NSString stringWithFormat:@"Row number %d", (int) indexPath.row];
+    return cell;
 }
 
 
