@@ -38,6 +38,9 @@
                                 <rect key="frame" x="172" y="58" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort"/>
+                                <connections>
+                                    <action selector="sortTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xc9-Hk-wmM"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IzW-35-Lte">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
