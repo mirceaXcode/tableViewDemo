@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _ourStrings = [NSMutableArray arrayWithArray:@[@"The First Row!", @"More Data", @"Even more data"]];
+    _ourStrings = [NSMutableArray arrayWithArray:@[@"The first row!", @"More data", @"Even more data"]];
 }
 
 - (IBAction)addTapped:(id)sender {
@@ -44,7 +44,8 @@
 
     for(long i = [_ourStrings count]-2; i>=0; i--){
         for(long j = i; j<[_ourStrings count]-1; j++){
-            if([_ourStrings[j] compare:_ourStrings[j+1]] > 0){
+            // in order not take into consideration upper or lower case, you need to use caseInsensitiveCompare. If using compare, the upper case will have priority and it will be sorted first.
+            if([_ourStrings[j] caseInsensitiveCompare:_ourStrings[j+1]] > 0){
                 // swap or elements
                 [_tableView beginUpdates];
                 
